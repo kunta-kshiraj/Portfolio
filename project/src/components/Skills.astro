@@ -1,0 +1,78 @@
+---
+const skills = [
+  {
+    category: "Programing Languages",
+    items: ["C", "C++", "Python", "Java"]
+  },
+  {
+    category: "Frontend",
+    items: ["React", "TypeScript", "Tailwind CSS", "Next.js"]
+  },
+  {
+    category: "Backend",
+    items: ["Node.js", "Python", "Java", "C++"]
+  },
+  {
+    category: "Cloud & DevOps",
+    items: ["Firebase", "AWS", "Docker", "CI/CD"]
+  },
+  {
+    category: "Database",
+    items: ["MongoDB", "PostgreSQL", "Cloud Firestore", "Redis"]
+  }
+];
+---
+
+<section id="skills" class="py-24 bg-black">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-16">
+      Technical <span class="text-gradient">Skills</span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* First row: 3 cards */}
+      {skills.slice(0, 3).map((skillGroup, index) => (
+        <div
+          data-aos="fade-up"
+          data-aos-delay={index * 100}
+          class="bg-[#111] p-6 rounded-2xl hover:transform hover:scale-105 transition-transform duration-300"
+        >
+          <h3 class="text-xl font-semibold mb-4 text-[#007AFF]">{skillGroup.category}</h3>
+          <ul class="space-y-2">
+            {skillGroup.items.map(skill => (
+              <li class="text-gray-300 flex items-center gap-2">
+                <svg class="w-4 h-4 text-[#007AFF]" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                {skill}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center mt-8">
+      {/* Second row: 2 cards */}
+      {skills.slice(3).map((skillGroup, index) => (
+        <div
+          data-aos="fade-up"
+          data-aos-delay={(index + 3) * 100}
+          class="bg-[#111] p-6 rounded-2xl hover:transform hover:scale-105 transition-transform duration-300"
+        >
+          <h3 class="text-xl font-semibold mb-4 text-[#007AFF]">{skillGroup.category}</h3>
+          <ul class="space-y-2">
+            {skillGroup.items.map(skill => (
+              <li class="text-gray-300 flex items-center gap-2">
+                <svg class="w-4 h-4 text-[#007AFF]" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                {skill}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

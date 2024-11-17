@@ -1,0 +1,56 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Kshiraj Kunta - Software Engineer Portfolio" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>{title}</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+  <body class="bg-black text-white font-sfpro">
+    <slot />
+    <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script is:inline>
+      AOS.init({
+        duration: 800,
+        once: false,
+      });
+    </script>
+    <footer style="background-color: black; padding: 10px; text-align: center;"> <p>&copy;  2024 Kshiraj Kunta</p> <p><a href="kshriraj.kunta@gmail.com">kshiraj.kunta@gmail.com</a></p>
+  </body>
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: 'SF Pro Display';
+    
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  .font-sfpro {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+  
+  .glass-nav {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(to right, #007AFF, #00C7FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>
